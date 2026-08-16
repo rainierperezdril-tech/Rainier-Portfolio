@@ -1,0 +1,565 @@
+/* Global Reset & Base Styles */
+@font-face{
+	font-family: "freaky";
+	src: url("../fonts/freaky.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+	display: flex;
+	background-color: #306d29;    
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 20px; 
+	justify-content: space-between; 
+	background: transparent !important;
+}
+
+header image{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center; 
+	
+}
+
+nav{
+	display: flex;
+	justify-content: center;   
+	align-items: center;       
+	gap: 30px;                 
+	padding:10px;   
+	
+}
+
+a{
+	text-decoration: none;
+	color: #114817;
+	font-family: "freaky";
+	font-size: 32px;                
+}
+
+body {
+    background-color: #f0f4f1; /* Soft off-white/pale sage background */
+    color: #2f3e35;            /* Deep forest green-gray for readable text */
+    min-height: 100vh;
+}
+
+/* Layout Container */
+.portfolio-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 3rem;
+}
+
+/* Left Sidebar */
+/* Update your existing .sidebar style */
+.sidebar {
+    width: 250px;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem); /* Limits height to fit the screen */
+    overflow-y: auto;              /* Enables vertical scrolling */
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.03);
+}
+
+/* Optional: Custom scrollbar styling for a cleaner look */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #d4e2d4;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #8fb996;
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #4a7c59; /* Rich pastel green accent */
+    letter-spacing: 0.5px;
+}
+
+.category-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.category-link {
+    text-decoration: none;
+    color: #5c7065;
+    font-size: 1rem;
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.category-link:hover, 
+.category-link.active {
+    background-color: #c5ded3; /* Soft pastel green highlight */
+    color: #2f3e35;
+    transform: translateX(4px);
+    font-weight: 500;
+}
+
+/* Right Main Content */
+.main-content {
+    flex: 1;
+}
+
+.content-header {
+    margin-bottom: 2rem;
+}
+
+.content-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #2f3e35;
+}
+
+.content-header p {
+    color: #5c7065;
+    font-size: 1.1rem;
+}
+
+/* Works Grid */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Work Card */
+.work-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.work-image {
+    height: 180px;
+    background: #2f3e35; /* Dark background to fill any empty letterbox/pillarbox space neatly */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the entire photo is fully seen without cutting edges */
+    display: block;
+}
+
+.work-info {
+    padding: 1.2rem;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    background: #e2eae3;
+    color: #4a7c59;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.work-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: #2f3e35;
+}
+
+.work-info p {
+    font-size: 0.9rem;
+    color: #5c7065;
+    line-height: 1.4;
+}
+
+/* Enable smooth scrolling across the page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style for stacked work sections on the right */
+.work-section {
+    margin-bottom: 3.5rem;
+    padding-top: 1rem; /* Prevents sticky headers from overlapping */
+}
+
+.work-section h2 {
+    font-size: 1.5rem;
+    color: #4a7c59;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid #d4e2d4;
+    padding-bottom: 0.4rem;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .category-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .category-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Packaging Design Stack Layout */
+.packaging-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.packaging-card {
+    width: 870px;
+    height: 204px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.packaging-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.packaging-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the full image visible without cutting edges */
+    display: block;
+}
+
+/* Responsive adjustment for screens smaller than the set width */
+@media (max-width: 700px) {
+    .packaging-card {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+}
+
+/* Loyalty Cards Row Layout */
+.loyalty-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.loyalty-card {
+    width: 324px;
+    height: 204px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loyalty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.loyalty-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the full image visible without cutting edges */
+    display: block;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 1050px) {
+    .loyalty-row {
+        justify-content: center;
+    }
+}
+
+/* AdPoster 3x2 Grid Layout (Scaled Down) */
+.adposter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 288px);
+    gap: 1.5rem;
+    justify-content: start;
+}
+
+.adposter-card {
+    width: 288px;
+    height: 360px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adposter-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.adposter-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the full poster visible without cutting edges */
+    display: block;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 1000px) {
+    .adposter-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        justify-content: center;
+    }
+    
+    .adposter-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+}
+
+/* Poster 3x2 Grid Layout (Scaled Down) */
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 288px);
+    gap: 1.5rem;
+    justify-content: start;
+}
+
+.poster-card {
+    width: 288px;
+    height: 360px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.poster-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the full poster visible without cutting edges */
+    display: block;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 1000px) {
+    .poster-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        justify-content: center;
+    }
+    
+    .poster-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+}
+
+/* Others Square 3x2 Grid Layout */
+.others-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 260px);
+    gap: 1.5rem;
+    justify-content: start;
+}
+
+.others-card {
+    width: 260px;
+    height: 260px; /* Equal width and height makes it square */
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.others-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.others-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the full image visible without cutting edges */
+    display: block;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 900px) {
+    .others-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        justify-content: center;
+    }
+    
+    .others-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+/* Affinity Section Single Poster Layout */
+.affinity-container {
+    display: flex;
+    justify-content: start;
+}
+
+.affinity-card {
+    width: 500px;
+    height: 340px; /* Scales down cleanly while maintaining a 3:4 portrait ratio */
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.affinity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.affinity-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the full image visible without cutting edges */
+    display: block;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 500px) {
+    .affinity-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* Infographic Section Single Widescreen Layout */
+.infographic-container {
+    display: flex;
+    justify-content: start;
+}
+
+.infographic-card {
+    width: 640px;
+    height: 360px; /* Maintains the 16:9 widescreen ratio (2000x1125 scaled down) */
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #d4e2d4;
+    box-shadow: 0 4px 6px rgba(47, 62, 53, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infographic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 124, 89, 0.1);
+    border-color: #8fb996;
+}
+
+.infographic-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps the full graphic visible without cutting edges */
+    display: block;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 700px) {
+    .infographic-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* Sidebar Image Styling */
+.sidebar-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sidebar-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
